@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/css.css' %}">
+    <title>Проектирование высоконагруженных интернет-сервисов</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header_img">
+            <nav class="nav-bar">
+                <div class="logos">
+                    <a href="https://mai.ru/">
+                        <img src="{% static 'main/img/logo_mai.png' %}" alt="МАИ">
+                    </a>
+                    <a href="https://mai.ru/">
+                        <p class="mai_descr">
+                            МАИ
+                        </p>
+                    </a>
+                </div>
+                <div class="social">
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/vk.svg' %}" alt="vk">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/tg.svg' %}" alt="tg">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/youtube.svg' %}" alt="youtube">
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-bar_list">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index_home'  %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_home' %}">Новости</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#button" role="button" data-toggle="button" aria-expanded="false">
+                            Подробнее
+                        </a>
+                        <a class="nav-link dropdown-toggle media" href="#burger" role="burger" data-toggle="burger" aria-expanded="false">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'cathedra_home' %}">О кафедре</a></li>
+                            <li><a class="dropdown-item" href="{% url 'teachers_home' %}">Преподаватели</a></li>
+                            <li><a class="dropdown-item" href="{% url 'plan_home' %}">Учебный план</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section class="section">
+                <div class="div_wrap">
+                    <div class="section_content">
+                        <h1 class="section_header">Проектирование <span>высоконагруженных</span> интернет-сервисов</h1>
+                        <div class="section_wrap">
+                            <div class="section_first-half">
+                                <h2 class="section_subheader">
+                                    Чему научим за два года?
+                                </h2>
+                                <ul class="section_pros">
+                                    <li class="section_line">
+                                        <img src="{% static 'main/img/tech.svg' %}" alt="technologies">
+                                        Ориентироваться в технологических процессах индустрии HighLoad
+                                    </li>
+                                    <li class="section_line">
+                                        <img src="{% static 'main/img/code.svg' %}" alt="code">
+                                        Грамотно применять современный инструментарий
+                                    </li class="section_line">
+                                    <li>
+                                        <img src="{% static 'main/img/arch.svg' %}" alt="architechture">
+                                        Находить оптимальные архитектурные решения
+                                    </li>
+                                    <li class="section_line">
+                                        <img src="{% static 'main/img/people.svg' %}" alt="people">
+                                        Взаимодействию с командой разработчиков
+                                    </li>
+                                    <li class="section_line">
+                                        <img src="{% static 'main/img/System.svg' %}" alt="system">
+                                        Системному мышлению
+                                    </li>
+                                </ul>
+                            <div>
+                        </div>
+                        <button class="button_apply">Подать заявку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <aside class="partners">
+        <div class="div_wrap">
+            <h2 class="partners_header">
+                Наши партнёры:
+            </h2>
+            <div class="partners_imgs">
+                <figcaption>
+                    <a href="https://ncloudtech.ru/">
+                        <img src="{% static 'main/img/new_cloud.png' %}" alt="new_cloud">
+                    </a>
+                </figcaption>
+                <figcaption>
+                    <a href="https://moskva.mts.ru/personal">
+                        <img src="{% static 'main/img/2560px-MTS_logo_2015.svg.png' %}" alt="mts">
+                    </a>
+                </figcaption>
+                <figcaption>
+                    <a href="https://www.avito.ru/">
+                        <img src="{% static 'main/img/Avito_logo.svg.png' %}" alt="avito">
+                    </a>
+                </figcaption>
+                <figcaption>
+                    <a href="https://msk.rt.ru/">
+                        <img src="{% static 'main/img/Rostelecom.png' %}" alt="rostelecom">
+                    </a>
+                </figcaption>
+            </div>
+        </div>
+        <div class='devider'></div>
+    </aside>
+    <aside class="more">
+        <div class="div_wrap">
+            <h2 class="more_header">
+                Основная информация:
+            </h2>
+            <div class="circles">
+                <div class="circles_card">
+                    <div class="circle">
+                        <img src="{% static 'main/img/company.svg' %}" alt="обучение">
+                    </div>
+                    <p class="circle_descr">
+                        <span>Форма обучения:</span> <br> очная
+                    </p>
+                </div>
+                <div class="circles_card">
+                    <div class="circle">
+                        <img src="{% static 'main/img/certification.svg' %}" alt="вуз">
+                    </div>
+                    <p class="circle_descr">
+                        <span>Институт №3</span> <br> «Системы управления, информатика и электроэнергетика»
+                    </p>
+                </div>
+                <div class="circles_card">
+                    <div class="circle">
+                        <img src="{% static 'main/img/suitcase.svg' %}" alt="руководитель">
+                    </div>
+                    <p class="circle_descr">
+                        <span>Руководитель:</span> <br> к.т.н. Кейно П.П.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="carousel">
+        <div class="div_wrap">
+            <div class="carousel_video">
+                <iframe width="862" height="485" src="https://www.youtube.com/embed/_aOKeqYL6gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <section class="ed_programme">
+        <div class="div_wrap">
+            <h2 class="ed_programme_header">Что будем изучать?</h2>
+            <div class="ed_programme_wrap">
+                <div class="ed_programme_card">
+                    <p class="ed_programme_year">Год первый</p>
+                    <ul class="ed_programme_list">
+                        <li>Архитектура высоконагруженных систем</li>
+                        <li>Архитектура биллинговых систем</li>
+                        <li>Проектирование баз данных</li>
+                        <li>Администрирование Linux</li>
+                        <li>Прикладная разработка на C++</li>
+                        <li>Сети TCP/IP</li>
+                        <li>Гибкие методологии разработки</li>
+                        <li>Менеджмент в ИТ</li>
+                    </ul>
+                </div>
+                <div class="ed_programme_card">
+                    <p class="ed_programme_year">Год второй</p>
+                    <ul class="ed_programme_list">
+                        <li>Разработка веб-приложений на основе Python</li>
+                        <li>Тестирование высоконагруженных систем</li>
+                        <li>Основы больших данных</li>
+                        <li>Безопасность интернет-приложений</li>
+                        <li>Параллельные и распределённые вычисления</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="info_digits">
+        <div class="div_wrap">
+            <div class="digits_wrap">
+                <div class="digit_card">
+                    <img src="{% static 'main/img/group.png' %}" alt="" class="digit_img">
+                    <div class="digit_text">
+                        <h3>Количество мест:</h3>
+                        <p>
+                            10 бюджетных, <br>
+                            6 платных
+                        </p>
+                    </div>
+                </div>
+                <div class="digit_card">
+                    <img src="{% static 'main/img/wallet.png' %}" alt="" class="digit_img">
+                    <div class="digit_text">
+                        <h3>Стоимость обучения:</h3>
+                        <p>232 000 / год *</p>
+                    </div>
+                </div>
+                <div class="digit_card">
+                    <img src="{% static 'main/img/structure.png' %}" alt="" class="digit_img">
+                    <div class="digit_text">
+                        <h3>Возраст:</h3>
+                        <p>21 – 30 – возраст <br> абитуриента магистратуры</p>
+                    </div>
+                </div>
+                <div class="digit_card">
+                    <img src="{% static 'main/img/time.png' %}" alt="" class="digit_img">
+                    <div class="digit_text">
+                        <h3>Длительность программы:</h3>
+                        <p>
+                            2160 часов аудиторной нагрузки в учебном плане <br>
+                            (60% практические занятия, 40% лекционные)
+                        </p>
+                    </div>
+                </div>
+                <div class="digit_card">
+                    <img src="{% static 'main/img/calendar.png' %}" alt="" class="digit_img">
+                    <div class="digit_text">
+                        <h3>Период:</h3>
+                        <p>
+                            2 года <br>
+                            сентябрь 2022 г. – август 2024 г.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="back_img"></section>
+    <div class="request">
+        <div class="div_wrap">
+            <div class="request_descr">
+                <h2 class="request_header">
+                    Подать заявку
+                </h2>
+                <div class="request_text">
+                    Оставьте контактные данные для участия в мероприятиях программы
+                </div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.email }}
+                {{ form.name }}
+                {{ form.telephone }}
+                {{ form.telegram }}
+                {{ form.subject }}
+                {{ form.message }}
+                {% comment %} <input type="email" name="email" required placeholder="E-mail" class="request_input">
+                <input type="text" name="name" required placeholder="Имя" class="request_input">
+                <input type="tel" name="telephone" required placeholder="+7 (999) 999-99-99" class="request_input">
+                <input type="url" name="telegram" required placeholder="@telegram" class="request_input">
+                <input type="text" name="subject" required placeholder="Тема письма" class="request_input">
+                <textarea placeholder="О себе..." required class="request_input" name="message" id="letter" cols="30" rows="10"></textarea>
+                <input name="letter-file" type="file" id="file">
+                <label for="file" class="request_input">
+                    или выберите файл с вашим письмом
+                </label> {% endcomment %}
+                <input type="submit" value="Оставить заявку" name="send" class="button_apply">
+            </form>
+            <div class="request_agreement">
+                <p>
+                    Нажимая на кнопку, я даю свое согласие на обработку представленных в форме персональных данных в <br>
+                    соответствии с требованиями Федерального закона от 27.07.2006 г. № 152-ФЗ «О персональных данных»
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aeaa88b0477c0b75da3f35a1f4990a1742c2eba29d575bc37ceae37a8fae34c92&amp;width=100%25&amp;height=452&amp;lang=ru_RU&amp;scroll=true"></script>
+    <footer class="footer">
+        <div class="div_wrap">
+            <div class="footer_wrap">
+                <div class="footer_contacts">
+                    <h2 class="footer_contacts-header">
+                        Наши контакты:
+                    </h2>
+                    <p>
+                        <a class="footer_a" href="tel:+7(499)-158-00-12">+7(499)-158-00-12</a><br>
+                        <a class="footer_a" href="https://mai.ru/itmai/">mai.ru/itmai</a><br>
+                        <a class="footer_a" href="mailto:it-centre@mai.ru">it-centre@mai.ru</a><br>
+                        <adress class="footer_a">
+                            IT-центр МАИ: ГУК. Зона А, этаж 3, к.12
+                        </adress>
+                    </p>
+                </div>
+                <a href="https://mai.ru/itmai/">
+                    <img class="footer_img" src="{% static 'main/img/-IT--_white.webp' %}" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <div class="arrow_to_top">
+        <i class="arrow up"></i>
+    </div>
+    <script src="{% static 'main/js/script.js' %}"></script>
+</body>
+</html>

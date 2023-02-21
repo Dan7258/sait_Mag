@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'news/css/css.css' %}">
+    <title>Лента</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header_img">
+            <nav class="nav-bar">
+                <div class="logos">
+                    <a href="https://mai.ru/">
+                        <img src="{% static 'main/img/logo_mai.png' %}" alt="МАИ">
+                    </a>
+                    <a href="https://mai.ru/">
+                        <p class="mai_descr">
+                            МАИ
+                        </p>
+                    </a>
+                </div>
+                <div class="social">
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/vk.svg' %}" alt="vk">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/tg.svg' %}" alt="tg">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/youtube.svg' %}" alt="youtube">
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-bar_list">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index_home'  %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_home' %}">Новости</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Подробнее
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'cathedra_home' %}">О кафедре</a></li>
+                            <li><a class="dropdown-item" href="{% url 'teachers_home' %}">Преподаватели</a></li>
+                            <li><a class="dropdown-item" href="{% url 'plan_home' %}">Учебный план</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="section">
+        <div class="div_wrap">
+            <div class="section_grid">
+            </div>
+        </div>
+    </section>
+    <nav class="article_pagination">
+        <ul class="article_pagination-list">
+        </ul>
+    </nav>
+    <script type="module" src="{% static 'news/js/script.js' %}"></script>
+</body>
+</html>

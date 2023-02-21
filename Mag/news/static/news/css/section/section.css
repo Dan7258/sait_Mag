@@ -1,0 +1,223 @@
+.section {
+    margin-top: 85px;
+    position: relative;
+    padding-bottom: 140px;
+}
+
+.section_grid {
+    display: grid;
+    gap: 20px;
+    width: 1321px;
+}
+
+.section_part {
+    display: grid;
+    gap: 20px;
+}
+
+.section_part-one {
+    grid-template: 1fr / 2fr 1fr;
+}
+
+.section_part-two {
+    grid-template: 1fr / 1fr 2fr;
+}
+
+.section_big-column .section_card .section_img > img {
+    width: 874px;
+    height: 530px;
+    object-fit: cover;
+}
+
+.section_card::before {
+    content: attr(data-before);
+    top: 0px;
+    left: 0;
+    font-family: "Fira Sans";
+    position: absolute;
+    border-radius: 20px 0 20px 0;
+    background-color: var(--button-color);
+    width: 276px;
+    height: 45px;
+    padding-top: 5px;
+    z-index: 1;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.section_small-column .section_card::before {
+    content: attr(data-before);
+    font-size: 20px;
+    width: 111px;
+    height: 30px;
+}
+
+.section_card {
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+}
+
+.section_small-column {
+    display: grid;
+    gap: 20px;
+    grid-template: 1fr 1fr / 1fr;
+}
+
+.section_card .section_img > img {
+    width: 427px;
+    height: 255px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.section_img {
+    position: relative;
+}
+
+.section_img::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    height: 40%;
+    background: linear-gradient(
+        360deg,
+        #0f0a40 -9.83%,
+        rgba(24, 16, 102, 0) 100%
+    );
+}
+
+.section_txt {
+    position: absolute;
+    bottom: 55px;
+    left: 42px;
+    font-style: normal;
+}
+
+.section_header {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 41px;
+    font-family: "Fira Sans";
+}
+
+.section_desc {
+    font-family: "Fira Sans";
+    font-weight: 200;
+    font-size: 21px;
+    margin-top: 5px;
+    line-height: 25px;
+}
+
+.section_small-column .section_txt {
+    bottom: 20px;
+    left: 20px;
+}
+
+.section_small-column .section_header {
+    font-size: 20px;
+}
+
+.section_card.active {
+    transition: 1s all;
+    cursor: auto;
+    padding: 92px 50px 60px 93px;
+    z-index: 3;
+    width: 1321px;
+    border-radius: 20px;
+    background-color: white;
+    position: fixed;
+    top: 40px;
+    min-height: 860px;
+}
+
+.section_card-content.active {
+    height: 100%;
+    padding-right: 30px;
+}
+
+.section_close {
+    position: absolute;
+    content: "";
+    width: 70px;
+    height: 70px;
+    top: 15px;
+    right: 17px;
+    cursor: pointer;
+}
+
+.section_header.active {
+    font-family: "Fira Sans";
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 53px;
+    color: #000000;
+}
+
+.section_img.active {
+    margin-top: 35px;
+}
+
+.section_img.active img {
+    width: 873px;
+    height: 530px;
+}
+
+.section_img.active::after {
+    content: none;
+}
+
+.section_desc.active, .section_desc.active * {
+    font-family: "Fira Sans";
+    margin-top: 35px;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 38px;
+    text-align: justify;
+    color: #000000;
+}
+
+.section_content.active {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section_list.active {
+    width: 200px;
+    margin-top: 35px;
+}
+
+.section_list.active ul {
+    margin-top: 30px;
+}
+
+.section_list-header.active {
+    font-family: "Fira Sans";
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.section_list-item.active {
+    font-family: "Fira Sans";
+    margin-top: 25px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    color: #767070;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.section_list-item.active:hover {
+    color: var(--button-color);
+}
+
+.section_list-item.active:not(:first-child) {
+    margin-top: 30px;
+}

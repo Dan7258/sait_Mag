@@ -1,0 +1,98 @@
+.nav-bar_list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    width: 519px;
+    margin-left: 167px;
+}
+
+.nav-item {
+    display: inline;
+    position: relative;
+}
+
+.nav-link {
+    font-family: 'Fira Sans';
+    font-weight: 200;
+    font-size: 32px;
+}
+
+.dropdown-item {
+    font-family: 'Fira Sans';
+    font-weight: 200;
+    font-size: 22px;
+    display: block;
+    margin-top: 15px;
+}
+
+.dropdown-menu {
+    text-align: center;
+    transition: .5s opacity;
+    opacity: 0;
+    top: 30px;
+    position: absolute;
+    transform: scale(.0000001);
+}
+
+.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.dropdown-toggle {
+    position: relative;
+}
+
+.dropdown-toggle:before {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: -35px;
+    width: 15%;
+    transition: .1s all;
+    height: 100%;
+    transform: scale(1.7);
+    background: no-repeat url("../../img/Sort.svg");
+}
+
+.dropdown-toggle:hover:before{
+    background: no-repeat url("../../img/Sort_or.svg");
+}
+
+li.nav-item a.nav-link:hover,a.dropdown-item:hover{
+    color: var(--extra-color);
+}
+
+.nav-bar {
+    display: flex;
+    background: linear-gradient(180deg, #000000 -149.53%, rgba(0, 0, 0, 0) 100%);
+    padding: 0 363px 0 323px;
+}
+
+.logos {
+    margin-top: -8px;
+    width: 216px;
+    display: flex;
+}
+
+img[alt="МАИ"] {
+    width: 120px;
+}
+
+.mai_descr {
+    margin-top: 36px;
+    margin-bottom: 0;
+    margin-left: -10px;
+    font-size: 40px;
+    font-family: 'Rubik';
+    font-weight: 500;
+    line-height: 49px;
+    text-transform: uppercase;
+}
+
+.social {
+    margin-top: 20px;
+    margin-left: 151px;
+    width: 181px;
+    display: flex;
+}
