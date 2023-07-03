@@ -1,20 +1,36 @@
 export const utils = (() => {
-
     const workWithDate = (cardsArr) => {
-        cardsArr = cardsArr.map((i, index) => {
-            i.id = cardsArr.length - index;
-            i.date = {
-                smallDate: new Date(i.date).toLocaleDateString(),
-                bigDate: new Date(i.date).toLocaleDateString("ru-RU", {
-                    month: "long",
-                    day: "2-digit",
-                    year: "2-digit",
-                }),
-            };
-            return i;
-        });
+        if (typeof cardsArr == "object") {
+            cardsArr = cardsArr.map((i, index) => {
+                i.id = cardsArr.length - index;
+                i.date = {
+                    smallDate: new Date(i.date).toLocaleDateString(),
+                    bigDate: new Date(i.date).toLocaleDateString("ru-RU", {
+                        month: "long",
+                        day: "2-digit",
+                        year: "2-digit",
+                    }),
+                    sourceDate: i.date
+                };
+                return i;
+            });
+        } else {
+            cardsArr = new Date(cardsArr).toLocaleDateString();
+        }
         return cardsArr;
     };
+
+    const getMonthFromDate = (date) => {
+        return +date.slice(3,5);
+    };
+
+    const getYearFromDate = (date) => {
+        return +date.slice(-4);
+    };
+
+    const sortForDate = (data) => {
+        return data.sort((newNumberOne,newNumberTwo) => Date.parse(newNumberOne.date.sourceDate) - Date.parse(newNumberTwo.date.sourceDate)).reverse();
+    }
 
     const escPressed = (e) => {
         return e.key === "Escape";
@@ -42,9 +58,17 @@ export const utils = (() => {
             (1 - 1) * numberOfElements + numberOfElements
         );
     }
-
+    
     const getRandomIntegerDigit = (min,max) => {
         return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    const filterPagesForText = (pagesArr) => {
+        return pagesArr.filter((i) => +i.firstElementChild.textContent);
+    }
+
+    const calculatePaginationNumber = (data,numberOfNewsOnPage) => {
+        return Math.ceil(data.length / numberOfNewsOnPage);
     }
 
     return {
@@ -53,6 +77,11 @@ export const utils = (() => {
         determineActivePage,
         divideData,
         getRandomIntegerDigit,
-        escPressed
+        escPressed,
+        filterPagesForText,
+        calculatePaginationNumber,
+        sortForDate,
+        getMonthFromDate,
+        getYearFromDate
     };
 })();

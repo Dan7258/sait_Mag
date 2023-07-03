@@ -3,6 +3,7 @@ import { contants } from "./constants.js";
 import { createOverlayCard } from "./createOverlayCard.js";
 
 export const generateNews = (() => {
+    
     const { divideData } = utils;
     const { ACTIVE_PAGE_NUMBER } = contants;
     const { openOverlayCard } = createOverlayCard;

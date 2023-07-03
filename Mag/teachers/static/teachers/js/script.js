@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     let activePage = determineActivePage();
     let activeId = determineActiveId();
-    const elemsOnPage = 1;
+    const elemsOnPage = 8;
     const data = (await getData("/teacher/data"));
     const generalWrap = document
         .querySelector(".people")

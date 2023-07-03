@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cathedra/css/css.css' %}">
+    <title>О кафедре</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_img">
+            <nav class="nav-bar">
+                <div class="logos">
+                    <a href="https://mai.ru/">
+                        <img src="{% static 'main/img/logo_mai.png' %}" alt="МАИ">
+                    </a>
+                    <a href="https://mai.ru/">
+                        <p class="mai_descr">
+                            МАИ
+                        </p>
+                    </a>
+                </div>
+                <div class="social">
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/vk.svg' %}" alt="vk">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/tg.svg' %}" alt="tg">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/youtube.svg' %}" alt="youtube">
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-bar_list">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index'  %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:news' %}">Новости</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Подробнее
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'cathedra:cathedra' %}">О кафедре</a></li>
+                            <li><a class="dropdown-item" href="{% url 'cathedra:teachers' %}">Преподаватели</a></li>
+                            <li><a class="dropdown-item" href="{% url 'cathedra:plan' %}">Учебный план</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article class="intro">
+        <div class="div_wrap">
+            <div class="intro_card">
+                <div class="intro_txt">
+                    <h2 class="intro_header">Начало</h2>
+                    <p class="intro_desc">История старейшей кафедры университета "Системное моделирование и инженерная
+                        графика" ведет отсчет с 1940 года. За это время в аудиториях и лабораториях кафедры было
+                        подготовлено более 10 000 специалистов различных областей науки и техники.</p>
+                </div>
+                <div class="intro_img">
+                    <img src="{% static 'cathedra/img/413.jpg' %}" alt="cabinet">
+                </div>
+            </div>
+            <div class="intro_card">
+                <div class="intro_img">
+                    <img src="{% static 'cathedra/img/men.jpg' %}" alt="men">
+                </div>
+                <div class="intro_txt">
+                    <h2 class="intro_header">Научная деятельность</h2>
+                    <p class="intro_desc">Сегодня научные работы кафедры ведутся по следующим направлениям: «Разработка
+                        программного обеспечения, электронных коммуникационных устройств», «Проектирование баз данных, и
+                        структурированных кабельных систем», «Создание интегрированных информационных комплексов»,
+                        «Геометрическое, твердотельное параметрическое и поверхностное моделирование сложных систем и
+                        изделий». Научная деятельность кафедры заслужила высокую оценку международных выставках,
+                        конференциях и симпозиумах.</p>
+                </div>
+            </div>
+            <div class="intro_card">
+                <div class="intro_txt">
+                    <h2 class="intro_header">Будущие навыки</h2>
+                    <p class="intro_desc">В процессе обучения на кафедре студенты овладевают современными, широко
+                        используемыми IT-технологиями: Oracle Database, ОС Unix (Linux, FreeBSD), WEB- инструментами
+                        RUBY/PHP/HTML, языком программирования Java, прикладными программами компании Microsoft и
+                        1C-Бухгалтерия, а также специальными средствами разработки аппаратного обеспечения: Microchip
+                        Technology Inc. и ARM-платформы.</p>
+                </div>
+                <div class="intro_img">
+                    <img src="{% static 'cathedra/img/students.jpg' %}" alt="students">
+                </div>
+            </div>
+            <div class="intro_card">
+                <div class="intro_img">
+                    <img src="{% static 'cathedra/img/bachelors.jpg' %}" alt="bachelors">
+                </div>
+                <div class="intro_txt">
+                    <h2 class="intro_header">AutoDesk</h2>
+                    <p class="intro_desc">
+                        Особое внимание уделяется изучению продуктов AutoDesk. На кафедре работают сертифицированные
+                        преподаватели, прошедшие обучение в авторизованных учебных центрах компании, в том числе по
+                        программе «3D образование». Студенты кафедры неоднократно занимали призовые места и становились
+                        лауреатами международных соревнований и конкурсов. Так, в конкурсе "Испытай возможности",
+                        проводимом компанией AutoDesk наши студенты заняли призовое 3-е место среди ВУЗов России и стран
+                        СНГ.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script src="{% static 'cathedra/js/script.js' %}"></script>
+</body>
+
+</html>

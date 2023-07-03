@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'plan/css/css.css' %}">
+    <title>Учебный план</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_img">
+            <nav class="nav-bar">
+                <div class="logos">
+                    <a href="https://mai.ru/">
+                        <img src="{% static 'main/img/logo_mai.png' %}" alt="МАИ">
+                    </a>
+                    <a href="https://mai.ru/">
+                        <p class="mai_descr">
+                            МАИ
+                        </p>
+                    </a>
+                </div>
+                <div class="social">
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/vk.svg' %}" alt="vk">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/tg.svg' %}" alt="tg">
+                        </a>
+                    </div>
+                    <div class="social_card">
+                        <a href="#">
+                            <img src="{% static 'main/img/youtube.svg' %}" alt="youtube">
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-bar_list">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index'  %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users:news' %}">Новости</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Подробнее
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'cathedra:cathedra' %}">О кафедре</a></li>
+                            <li><a class="dropdown-item" href="{% url 'cathedra:teachers' %}">Преподаватели</a></li>
+                            <li><a class="dropdown-item" href="{% url 'cathedra:plan' %}">Учебный план</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article class="article">
+        <div class="div_wrap">
+            <div class="article_txt">
+                <h1 class="article_header">
+                    Учебный план
+                </h1>
+                <p class="article_curs">
+                    Курс <span>1</span>
+                </p>
+            </div>
+            <div class="article_wrap">
+                <div class="article_column column-1">
+                    <h2 class="article_column_header">
+                        1 семестр <span>(54 час. лекций + 84 час. пр. занятий)</span>
+                    </h2>
+                    <ul class="article_card-discipline">
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    1. Информатика:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Системы счисления</li>
+                                    <li class="article_card-list_item">Перевод чисел в различные системы счисления</li>
+                                    <li class="article_card-list_item">Операции над числами в различных системах счисления</li>
+                                    <li class="article_card-list_item">Представления различных чисел в памяти компьютера</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    2. Алгоритмические языки и программирование:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Введение в программирование на языке Си</li>
+                                    <li class="article_card-list_item">Процесс и этапы компиляции программы</li>
+                                    <li class="article_card-list_item">Стандартные библиотеки в языке программирования Си</li>
+                                    <li class="article_card-list_item">Базовые типы данных</li>
+                                    <li class="article_card-list_item">Базовые алгоритмы сортировки</li>
+                                </ul>
+                            </div>    
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    3. Организация электронного документооборта на основе Microsoft Office Word:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Введение в Microsoft Office Word</li>
+                                    <li class="article_card-list_item">Методики и техники ускоренной работы в Word</li>
+                                    <li class="article_card-list_item">Стандарты документов и настройка документов в Word</li>
+                                    <li class="article_card-list_item">Форматирование текста в соответствии со стандартами</li>
+                                    <li class="article_card-list_item">Стили и их использование</li>
+                                </ul>
+                            </div>    
+                        </li>
+                    </ul>
+                </div>
+                <div class="article_column column-2">
+                    <h2 class="article_column_header">
+                        2 семестр <span>(16 час. лекций + 52 час. пр. занятий)</span>
+                    </h2>
+                    <ul class="article_card-discipline">
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    1. Математическая логика и теория алгоритмов:
+                                </h3>
+                                <ul class="article_card-list">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    2. Анализ данных с использованием Microsoft Office Excel:
+                                </h3>
+                                <ul class="article_card-list">
+                                </ul>
+                            </div>    
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    3. Алгоритмические языки и программирование:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Использование сторонних библиотек библиотек на примере псевдографики</li>
+                                    <li class="article_card-list_item">Работа с файлами</li>
+                                    <li class="article_card-list_item">Работа со связными списками</li>
+                                    <li class="article_card-list_item">Алгоритмы шифрования</li>
+                                    <li class="article_card-list_item">Работа с деревьями</li>
+                                </ul>
+                            </div>    
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    4. Учебная практика:
+                                </h3>
+                                <ul class="article_card-list">
+                                </ul>
+                            </div>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article_txt">
+                <h1 class="article_header">
+                    Учебный план
+                </h1>
+                <p class="article_curs">
+                    Курс <span>1</span>
+                </p>
+            </div>
+            <div class="article_wrap">
+                <div class="article_column column-1">
+                    <h2 class="article_column_header">
+                        1 семестр <span>(54 час. лекций + 84 час. пр. занятий)</span>
+                    </h2>
+                    <ul class="article_card-discipline">
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    1. Информатика:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Системы счисления</li>
+                                    <li class="article_card-list_item">Перевод чисел в различные системы счисления</li>
+                                    <li class="article_card-list_item">Операции над числами в различных системах счисления</li>
+                                    <li class="article_card-list_item">Представления различных чисел в памяти компьютера</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    2. Алгоритмические языки и программирование:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Введение в программирование на языке Си</li>
+                                    <li class="article_card-list_item">Процесс и этапы компиляции программы</li>
+                                    <li class="article_card-list_item">Стандартные библиотеки в языке программирования Си</li>
+                                    <li class="article_card-list_item">Базовые типы данных</li>
+                                    <li class="article_card-list_item">Базовые алгоритмы сортировки</li>
+                                </ul>
+                            </div>    
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    3. Организация электронного документооборта на основе Microsoft Office Word:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Введение в Microsoft Office Word</li>
+                                    <li class="article_card-list_item">Методики и техники ускоренной работы в Word</li>
+                                    <li class="article_card-list_item">Стандарты документов и настройка документов в Word</li>
+                                    <li class="article_card-list_item">Форматирование текста в соответствии со стандартами</li>
+                                    <li class="article_card-list_item">Стили и их использование</li>
+                                </ul>
+                            </div>    
+                        </li>
+                    </ul>
+                </div>
+                <div class="article_column column-2">
+                    <h2 class="article_column_header">
+                        2 семестр <span>(16 час. лекций + 52 час. пр. занятий)</span>
+                    </h2>
+                    <ul class="article_card-discipline">
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    1. Математическая логика и теория алгоритмов:
+                                </h3>
+                                <ul class="article_card-list">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    2. Анализ данных с использованием Microsoft Office Excel:
+                                </h3>
+                                <ul class="article_card-list">
+                                </ul>
+                            </div>    
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    3. Алгоритмические языки и программирование:
+                                </h3>
+                                <ul class="article_card-list">
+                                    <li class="article_card-list_item">Использование сторонних библиотек библиотек на примере псевдографики</li>
+                                    <li class="article_card-list_item">Работа с файлами</li>
+                                    <li class="article_card-list_item">Работа со связными списками</li>
+                                    <li class="article_card-list_item">Алгоритмы шифрования</li>
+                                    <li class="article_card-list_item">Работа с деревьями</li>
+                                </ul>
+                            </div>    
+                        </li>
+                        <li>
+                            <div class="article_card">
+                                <h3 class="article_card-header">
+                                    4. Учебная практика:
+                                </h3>
+                                <ul class="article_card-list">
+                                </ul>
+                            </div>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script src="{% static 'plan/js/script.js' %}"></script>
+</body>
+
+</html>

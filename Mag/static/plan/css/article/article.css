@@ -1,0 +1,61 @@
+span {
+    font-family: "Fira Sans";
+}
+.article {
+    padding-bottom: 68px;
+    background: no-repeat url("../../img/back_plan.png");
+}
+.article_txt {
+    width: 386px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 85px;
+}
+.article_header {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+}
+.article_curs {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+}
+.article_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+}
+.article_column {
+    width: 588px;
+}
+.article_column_header {
+    margin-top: 5px;
+    text-indent: -5px;
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+.article_card {
+    margin-top: 40px;
+}
+.article_card-header {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+}
+.article_card-list {
+    margin-top: 15px;
+}
+.article_card-list_item {
+    margin-left: 50px;
+    list-style: circle;
+    font-family: 'Fira Sans';
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 30px;
+}

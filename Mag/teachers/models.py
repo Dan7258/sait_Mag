@@ -8,7 +8,7 @@ class TeachersAdd(models.Model):
     body = models.TextField(blank=True, null = True,verbose_name='О сотруднике')
     date = models.DateTimeField(verbose_name='Дата публикации')
     class Meta:
-        verbose_name = 'Сотрудники ВУЗа'
+        verbose_name = 'Сотрудник ВУЗа'
         verbose_name_plural = 'Сотрудники ВУЗа'
     
     def __str__(self) :

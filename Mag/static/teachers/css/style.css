@@ -1,0 +1,36 @@
+:root {
+    --background-color: #181066;
+    --button-color: #3F32FD;
+    --extra-color: #FD9131;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    color:rgb(255, 255, 255) ;
+}
+
+a {
+    color: white;
+    transition-duration: 0.1s;
+}
+
+h2 {
+    letter-spacing: 1px;
+}
+
+a:hover {
+    color: var(--button-color);
+}
+
+.div_wrap {
+    padding: 0 297px;
+}
+
+span {
+    color: var(--extra-color);
+}

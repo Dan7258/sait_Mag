@@ -1,6 +1,7 @@
 import { utils } from "./utils.js";
 
 export const getData = (() => {
+    
     const { workWithDate } = utils;
     
     const getData = async (url) => {

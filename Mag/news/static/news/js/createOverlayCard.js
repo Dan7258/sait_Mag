@@ -3,14 +3,15 @@ import { getData } from "./getData.js";
 import { utils } from "./utils.js";
 
 export const createOverlayCard = (() => {
+    
     const { NUMBER_OF_NEWS_ON_PAGE, ACTIVE_ID_NUMBER, pageObject, newShow, newTiming, newHide } = contants;
-    const { getRandomIntegerDigit, escPressed } = utils;
+    const { getRandomIntegerDigit, escPressed, sortForDate } = utils;
     
     let activeCard;
     let cardWrapClick;
 
     const openActiveIdOverlayCard = async () => {
-        const data = (await getData("/news/data")).data.reverse();
+        const data = sortForDate((await getData("/news/data")).data);
         if (ACTIVE_ID_NUMBER != "") {
             insertOverlayElement(data[ACTIVE_ID_NUMBER - 1]);
         }
@@ -151,6 +152,5 @@ export const createOverlayCard = (() => {
     return { 
         openOverlayCard,
         openActiveIdOverlayCard,
-        removeActiveCard
     };
 })();

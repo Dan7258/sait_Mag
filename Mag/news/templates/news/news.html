@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.4.0/build/vanilla-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'news/css/css.css' %}">
     <title>Лента</title>
 </head>
@@ -60,6 +61,11 @@
             </nav>
         </div>
     </header>
+    <button class="calendar-button">
+        <img class="calendar__cross" alt="Иконка закрытия" src="{% static 'news/img/cross.svg' %}">
+        <img class="calendar__icon" alt="Иконка календаря" src="{% static 'news/img/calendar.svg' %}">
+    </button>
+    <div id="calendar"></div>
     <section class="section">
         <div class="div_wrap">
             <div class="section_grid">
@@ -70,6 +76,7 @@
         <ul class="article_pagination-list">
         </ul>
     </nav>
-    <script type="module" src="{% static 'news/js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.4.0/build/vanilla-calendar.min.js" defer></script>
+    <script type="module" src="{% static 'news/js/app.js' %}"></script>
 </body>
 </html>

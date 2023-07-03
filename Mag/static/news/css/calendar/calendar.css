@@ -1,0 +1,126 @@
+.vanilla-calendar {
+    grid-gap: 5px;
+    gap: 5px;
+    position: fixed;
+    z-index: 2;
+    left: 1455px;
+    top: 664px;
+    border-radius: 15px;
+    opacity: 0;
+    display: none;
+}
+
+.vanilla-calendar_active {
+    display: block;
+}
+
+.vanilla-calendar-content {
+    padding: 12px;
+    padding-top: 0;
+}
+
+.vanilla-calendar-years__year {
+    color: var(--button-color);
+}
+
+.vanilla-calendar-years__year_selected {
+    background-color: var(--button-color);
+    color: white;
+}
+
+.vanilla-calendar-year:hover {
+    color: var(--button-color);
+}
+
+.vanilla-calendar-months__month {
+    color: var(--button-color);
+    background-color: white;
+}
+
+.vanilla-calendar-months__month_selected {
+    background-color: var(--button-color);
+    color: white;
+}
+
+.vanilla-calendar-months__month_selected:hover, .vanilla-calendar-years__year_selected:hover {
+    background-color: var(--button-color);
+}
+
+.vanilla-calendar-arrow::before {
+    top: 4px;
+}
+
+.vanilla-calendar-arrow::after {
+    bottom: 4px;
+}
+
+.vanilla-calendar-arrow::before,.vanilla-calendar-arrow::after {
+    background-color: white;
+    height: 2px;
+    width: 13px;
+}
+
+.vanilla-calendar-arrow:hover::before, .vanilla-calendar-arrow:hover::after {
+    background-color: var(--extra-color);
+}
+
+.vanilla-calendar_month {
+    padding: 0;
+}
+
+.vanilla-calendar_year {
+    padding: 0;
+}
+
+.vanilla-calendar-header {
+    padding: 5px 12px 5px 12px;
+    height: 45px;
+    border-radius: inherit;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: var(--button-color);
+    color: white;
+    cursor: grab;
+}
+
+.vanilla-calendar-year {
+    color: var(--extra-color);
+}
+
+.vanilla-calendar-year:hover {
+    color: rgb(212, 123, 45);
+}
+
+.vanilla-calendar-month {
+    color: white;
+}
+
+.vanilla-calendar-month:hover {
+    color: rgb(204, 202, 202);
+}
+
+.vanilla-calendar-month,.vanilla-calendar-year {
+    transition: 150ms all linear;
+}
+
+.calendar-button {
+    position: fixed;
+    z-index: 2;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    bottom: 20px;
+    transform: translate(175%,0);
+    right: 46px;
+    background: #3F32FD;
+    border: 3px solid #FFFFFF;
+    border-radius: 74px;
+    overflow: hidden;
+}
+
+.calendar__cross {
+    position: absolute;
+    transform: translateX(-100px);
+    width: 76px;
+    top: 9px;
+}

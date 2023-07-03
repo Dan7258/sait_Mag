@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 36px;
-    width: 36vw;
-    margin-left: 8vw;
+    width: 519px;
+    margin-left: 167px;
 }
 
 .nav-item {
@@ -48,9 +48,9 @@
     position: absolute;
     top: 13px;
     right: -35px;
-    width: 22px;
+    width: 15%;
     transition: .1s all;
-    height: 38px;
+    height: 100%;
     transform: scale(1.7);
     background: no-repeat url("../../img/Sort.svg");
 }
@@ -62,7 +62,6 @@
 li.nav-item a.nav-link:hover,a.dropdown-item:hover{
     color: var(--extra-color);
 }
-
 
 .nav-bar {
     display: flex;
@@ -93,11 +92,7 @@ img[alt="МАИ"] {
 
 .social {
     margin-top: 20px;
-    margin-left: 9vw;
+    margin-left: 151px;
     width: 181px;
     display: flex;
-}
-
-.media {
-    display: none;
 }

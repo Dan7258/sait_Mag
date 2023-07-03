@@ -66,6 +66,7 @@
 }
 
 .section_card .section_img > img {
+    pointer-events: none;
     width: 427px;
     height: 255px;
     object-fit: cover;
