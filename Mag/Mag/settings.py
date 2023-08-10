@@ -10,23 +10,50 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import environ
+import os
+
 from pathlib import Path
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool),
+    SECRET_KEY=(str),
+    DOMAIN_NAME=(str),
+
+    REDIS_HOST=(str),
+    REDIS_PORT=(str),
+
+    DATABASE_NAME=(str),
+    DATABASE_USER=(str),
+    DATABASE_PASSWORD=(str),
+    DATABASE_HOST=(str), 
+    DATABASE_PORT=(str),
+
+    EMAIL_HOST=(str),
+    EMAIL_HOST_USER=(str),
+    EMAIL_HOST_PASSWORD=(str),
+    EMAIL_PORT=(str),
+    EMAIL_USE_SSL=(str),
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uwbaptq2vh-hoo04o%p(aazxus@xi@hkx$yi(x_b4n+)8*o%zy'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+DOMAIN_NAME = env('DOMAIN_NAME')
 
 # Application definition
 
@@ -41,6 +68,10 @@ INSTALLED_APPS = [
     'cathedra',
     'django_mysql',
     'ckeditor',
+    'debug_toolbar',
+    'django_extensions',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -51,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'Mag.urls'
@@ -73,24 +105,42 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Mag.wsgi.application'
 
-# Настройки Celery
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    'localhost',
+    # ...
+]
+
+#настройка REDIS
+
+REDIS_HOST = env('REDIS_HOST')
+REDIS_PORT = env('REDIS_PORT')
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
 # Настройки базы данных
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+
 DATABASES = {
  'default': { 
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'Django', 
-        'USER': 'root', 
-        'PASSWORD': '12345678', 
-        'HOST': '127.0.0.1', 
-        'PORT': '3306', 
+        'NAME': env('DATABASE_NAME'), 
+        'USER': env('DATABASE_USER'), 
+        'PASSWORD': env('DATABASE_PASSWORD'), 
+        'HOST': env('DATABASE_HOST'),#mysql - это для докера
+        'PORT': env('DATABASE_PORT'), 
         'OPTIONS': { 
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" ,
             "charset": "utf8mb4",
@@ -136,7 +186,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+
+if  DEBUG:
+   STATICFILES_DIRS = [BASE_DIR / 'static']
+
+if not DEBUG:
+   STATIC_ROOT = BASE_DIR/'static' 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
@@ -148,14 +203,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'ditaljev@yandex.ru'
-EMAIL_HOST_PASSWORD = 'ehkkwsdopfafmaqz' #ehkkwsdopfafmaqz
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD') #ehkkwsdopfafmaqz
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_SSL = env('EMAIL_USE_SSL')
 
 
-FROM_EMAIL = "italyevdm@gmail.com"
-EMAIL_ADMIN = "italyevdm03@gmail.com"
+
 
 #users

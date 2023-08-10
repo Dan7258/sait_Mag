@@ -20,13 +20,14 @@ export const createOverlayCard = (() => {
   const openActiveIdOverlayCard = async () => {
     const data = sortForDate((await getData("/news/data")).data);
     if (ACTIVE_ID_NUMBER != "") {
-      insertOverlayElement(data[ACTIVE_ID_NUMBER - 1]);
+      const activeCard = data.find((item) => item.id === ACTIVE_ID_NUMBER);
+      insertOverlayElement(activeCard);
     }
   };
 
   const removeActiveCard = (parentElement, childElement) => {
     document.body.style.overflowY = "scroll";
-    history.pushState(null, null, `?page=${pageObject.activeScrollSection}`);
+    history.pushState(null, null, `/news/page/${pageObject.activeScrollSection}`);
     parentElement.removeEventListener("click", cardWrapClick);
     childElement.animate(newHide, newTiming);
     setTimeout(() => {
@@ -43,7 +44,8 @@ export const createOverlayCard = (() => {
       (e) => (escPressed(e) ? removeActiveCard(cardWrap, card) : ""),
       { once: true }
     );
-    cardWrapClick = (e) => {
+
+    const cardWrapClick = (e) => {
       if (
         e.target.tagName === "IMG" &&
         e.target.parentElement.classList.contains("section_close")
@@ -58,8 +60,33 @@ export const createOverlayCard = (() => {
         });
       }
     };
+
     cardWrap.addEventListener("click", cardWrapClick);
+    slideGallery();
     return cardWrapClick;
+  };
+
+  const slideGallery = () => {
+    const gallery = document.querySelector(".section_gallery");
+    const rightArr = document.querySelector(".section_arrow_right");
+    const leftArr = document.querySelector(".section_arrow_left");
+    const gallWrap = document.querySelector(".section_gallery-wrap");
+    const imgsLength = gallery.querySelectorAll("img").length - 1;
+    let currImg = 0;
+
+    rightArr?.addEventListener("click", () => {
+      if (imgsLength > currImg) {
+        currImg += 1;
+        gallWrap.style.transform = `translateX(${-873 * currImg}px)`;
+      }
+    });
+
+    leftArr?.addEventListener("click", () => {
+      if (currImg > 0) {
+        currImg -= 1;
+        gallWrap.style.transform = `translateX(${-873 * currImg}px)`;
+      }
+    });
   };
 
   const createRandomLinks = async (amountOfLinks) => {
@@ -82,6 +109,13 @@ export const createOverlayCard = (() => {
     return numbers;
   };
 
+  const createArrows = () => `<div class="section_arrow_left">
+                                <img src="/static/news/img/arrow.svg">
+                              </div>
+                              <div class="section_arrow_right">
+                                <img src="/static/news/img/arrow.svg">
+                              </div>`;
+
   const createOverlayElement = async (cardData) => {
     activeCard = {
       title: cardData.title,
@@ -96,9 +130,13 @@ export const createOverlayCard = (() => {
     history.pushState(
       null,
       null,
-      `?page=${Math.ceil(activeCard.number / NUMBER_OF_NEWS_ON_PAGE)}/?id=${
+      `/news/page/${Math.ceil(activeCard.number / NUMBER_OF_NEWS_ON_PAGE)}/id/${
         cardData.id
       }`
+    );
+    const gallery = cardData.photo.map(
+      (_, index) =>
+        `<div><img src="${MEDIA_URL + cardData.photo[index]}"></div>`
     );
     const links = await createRandomLinks(3);
     let newOverlayElem = `<div data-before="${
@@ -110,7 +148,12 @@ export const createOverlayCard = (() => {
                     </h2>
                     <div class="section_content active">
                         <div class="section_img active">
-                            <img src="${MEDIA_URL + cardData.photo[0]}">
+                          <div class="section_gallery">
+                            <div class="section_gallery-wrap">
+                              ${gallery.join("")}
+                            </div>
+                          </div>
+                          ${cardData.photo.length > 1 ? createArrows() : ""}
                         </div>
                         <div class="section_list active">
                             <h3 class="section_list-header active">

@@ -39,16 +39,16 @@ export const utils = (() => {
 
     const determineActiveId = () => {
         let activeId = "";
-        if (window.location.href.match(/id=\d+/)) {
-            activeId = window.location.href.match(/id=\d+/)[0].slice(3);
+        if (window.location.href.match(/id\/\d+/)) {
+            activeId = window.location.href.match(/id\/\d+/)[0].slice(3);
         }
         return activeId;
     };
 
     const determineActivePage = () => {
         let activePage = 1;
-        if (window.location.href.match(/page=\d+/)) {
-            activePage = window.location.href.match(/page=\d+/)[0].slice(5);
+        if (window.location.href.match(/page\/\d+/)) {
+            activePage = window.location.href.match(/page\/\d+/)[0].slice(5);
         }
         return activePage;
     };

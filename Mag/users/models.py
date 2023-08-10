@@ -5,18 +5,15 @@ from ckeditor.fields import RichTextField
 class Photo(models.Model):
     name = models.CharField(blank=True, null = True,max_length=100, unique=True)
     image = models.ImageField()
-
     def image_tag(self):
         # Возвращаем HTML-код с тегом img для отображения уменьшенного изображения в админке
         return mark_safe(f'<img src="{self.image.url}" style="max-height: 100px;">')
     image_tag.short_description = 'Изображение' 
-    
     def __str__(self) :
         return self.name
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
-    
     
     @property
     def image_preview(self):
@@ -50,9 +47,7 @@ class VideoFile(models.Model):
        
 
 class Tags(models.Model):
-    name = models.CharField(blank=True, null = True,max_length=100, unique=True)
-    
-    
+    name = models.CharField(blank=False, null = True,max_length=100, unique=True)
     class Meta:
         verbose_name = 'Тэг'
         verbose_name_plural = 'Тэги'
@@ -67,7 +62,7 @@ class News(models.Model):
     date = models.DateTimeField(verbose_name='Дата публикации')
     photo = models.ManyToManyField(Photo, blank=True, verbose_name='Фото')
     video_file = models.ManyToManyField(VideoFile,blank=True,verbose_name='Видео,файл')
-    tag = models.ForeignKey(to = Tags,blank=True, null = True, on_delete = models.PROTECT, verbose_name='Тэг')
+    tag = models.ManyToManyField(to = Tags,  verbose_name='Тэг', blank=False)
 
     class Meta:
         verbose_name = 'Новость'

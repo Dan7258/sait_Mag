@@ -1,0 +1,123 @@
+.learn {
+    padding-top: 95px;
+}
+
+.learn__wrap {
+    display: grid;
+    margin-top: 80px;
+    grid-template: 1fr / repeat(2, 1fr);
+    column-gap: 6vw;
+}
+
+.learn__title {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.learn__first {
+}
+
+.learn__header {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+}
+
+.learn__header::before {
+    position: absolute;
+    top: 35px;
+    content:"";
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 3px;
+    background-color: #000;
+}
+
+.learn__items {
+    border: 1px solid black;
+    padding: 35px;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 580px;
+    backdrop-filter: blur(5px);
+}
+
+.learn__list-item {
+    color: #0b0f19;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.learn__list-descr {
+    color: black;
+    margin-left: 20px;
+}
+
+.learn__list-item:first-child {
+    margin: 0;
+}
+
+@media (max-width: 1439px) {
+    .learn__wrap {
+        display: block;
+    }
+    .learn__second {
+        margin-top: 70px;
+    }
+    .learn__items {
+        width: 90%;
+    }
+}
+
+@media (max-width: 524px) {
+    .learn__list-descr {
+        color: black;
+        font-size: 18px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 424px) {
+    .learn {
+        padding-top: 60px
+    }
+    .learn__wrap {
+        margin-top: 60px;
+    }
+    .learn__items {
+        width: 100%;
+        padding: 14px;
+    }
+    .learn__header,.learn__title {
+        font-size: 22px;
+    }
+    .learn__list-item::before {
+        background: no-repeat url("../../img/arrow_small.svg");
+        width: 28px;
+        height: 28px;
+        top: 0;
+        left: -36px;
+    }
+    .learn__header::before {
+        position: absolute;
+        top: 28px;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        width: 175px;
+        height: 2px;
+        background-color: #000;
+    }
+}

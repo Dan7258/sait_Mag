@@ -1,98 +1,146 @@
-.nav-bar_list {
+.header {
+    background-color: var(--background-color);
+    padding: 15px 80px;
     display: flex;
     justify-content: space-between;
-    margin-top: 36px;
-    width: 519px;
-    margin-left: 167px;
 }
 
-.nav-item {
-    display: inline;
-    position: relative;
-}
-
-.nav-link {
-    font-family: 'Fira Sans';
-    font-weight: 200;
-    font-size: 32px;
-}
-
-.dropdown-item {
-    font-family: 'Fira Sans';
-    font-weight: 200;
-    font-size: 22px;
-    display: block;
-    margin-top: 15px;
-}
-
-.dropdown-menu {
-    text-align: center;
-    transition: .5s opacity;
-    opacity: 0;
-    top: 30px;
-    position: absolute;
-    transform: scale(.0000001);
-}
-
-.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.dropdown-toggle {
-    position: relative;
-}
-
-.dropdown-toggle:before {
-    content: "";
-    position: absolute;
-    top: 13px;
-    right: -35px;
-    width: 15%;
-    transition: .1s all;
-    height: 100%;
-    transform: scale(1.7);
-    background: no-repeat url("../../img/Sort.svg");
-}
-
-.dropdown-toggle:hover:before{
-    background: no-repeat url("../../img/Sort_or.svg");
-}
-
-li.nav-item a.nav-link:hover,a.dropdown-item:hover{
-    color: var(--extra-color);
-}
-
-.nav-bar {
+.header__list {
     display: flex;
-    background: linear-gradient(180deg, #000000 -149.53%, rgba(0, 0, 0, 0) 100%);
-    padding: 0 363px 0 323px;
+    align-items: center;
+    margin-left: 25vw;
+    justify-content: space-between;
+    width: 37vw;
 }
 
-.logos {
-    margin-top: -8px;
-    width: 216px;
-    display: flex;
+.header__list-item {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: 0.2s all;
 }
 
-img[alt="МАИ"] {
-    width: 120px;
+.header__list-item:hover {
+    text-decoration: underline;
 }
 
-.mai_descr {
-    margin-top: 36px;
-    margin-bottom: 0;
-    margin-left: -10px;
-    font-size: 40px;
-    font-family: 'Rubik';
-    font-weight: 500;
-    line-height: 49px;
+.header__apply {
+    justify-self: right;
+    border: 1px solid white;
+    padding: 18px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.2s all;
+    line-height: normal;
     text-transform: uppercase;
 }
 
-.social {
-    margin-top: 20px;
-    margin-left: 151px;
-    width: 181px;
-    display: flex;
+.header__apply:hover {
+    color: white;
+    border: 1px solid transparent;
+    background: linear-gradient(180deg, #fd8211 0%, #fe300d 100%);
+}
+
+.header__hamburger {
+    display: none;
+}
+
+.hamburger {
+    width: 40px;
+    height: 40px;
+}
+
+.hamburger__wrap {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0; 
+    left: 0;
+}
+
+.hamburger__list {
+    position: fixed;
+    top: 0;
+    left: -60vw;
+    height: 100vh;
+    width: 60vw;
+    z-index: 3;
+    padding: 50px;
+    transition: .5s all;
+    background-color: var(--background-color);
+}
+
+.hamburger__list.active {
+    left: 0;
+}
+
+.hamburger__list .header__list-item {
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.hamburger__list .header__list-item:first-child {
+    margin-top: 0;
+}
+
+.hamburger__list .header__list-item:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+.hamburger__list .header__list-item:last-child > img {
+    width: 50px;
+}
+
+@media (max-width: 1439px) {
+    .header {
+        padding: 15px 40px;
+    }
+    .header__list {
+        margin-left: 0;
+        width: 670px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .header__apply {
+        display: none;
+    }
+    .header__list-item {
+        font-size: 25px;
+    }
+    .header__list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .header__list {
+        display: none;
+    }
+    .header__hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 524px) {
+    .hamburger__list {
+        width: 80vw;
+        left: -80vw;
+        padding: 50px 30px;
+    }
+    .hamburger__list .header__list-item {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    .hamburger__list .header__list-item:last-child > img {
+        width: 45px;
+    }
 }

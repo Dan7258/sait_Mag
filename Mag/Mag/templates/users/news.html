@@ -11,73 +11,96 @@
 </head>
 <body>
     <header class="header">
-        <div class="header_img">
-            <nav class="nav-bar">
-                <div class="logos">
-                    <a href="https://mai.ru/">
-                        <img src="{% static 'main/img/logo_mai.png' %}" alt="МАИ">
-                    </a>
-                    <a href="https://mai.ru/">
-                        <p class="mai_descr">
-                            МАИ
-                        </p>
-                    </a>
-                </div>
-                <div class="social">
-                    <div class="social_card">
-                        <a href="#">
-                            <img src="{% static 'main/img/vk.svg' %}" alt="vk">
-                        </a>
-                    </div>
-                    <div class="social_card">
-                        <a href="#">
-                            <img src="{% static 'main/img/tg.svg' %}" alt="tg">
-                        </a>
-                    </div>
-                    <div class="social_card">
-                        <a href="#">
-                            <img src="{% static 'main/img/youtube.svg' %}" alt="youtube">
-                        </a>
-                    </div>
-                </div>
-                <ul class="nav-bar_list">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'index'  %}">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:news' %}">Новости</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#button" role="button" data-toggle="button" aria-expanded="false">
-                            Подробнее
-                        </a>
-                        <a class="nav-link dropdown-toggle media" href="#burger" role="burger" data-toggle="burger" aria-expanded="false">
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'cathedra:cathedra' %}">О кафедре</a></li>
-                            <li><a class="dropdown-item" href="{% url 'cathedra:teachers' %}">Преподаватели</a></li>
-                            <li><a class="dropdown-item" href="{% url 'cathedra:plan' %}">Учебный план</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+        <div class="header__hamburger">
+            <img src="{% static 'main/img/hamburger.svg' %}" alt="Меню" class="hamburger" />
+            <div class="hamburger__wrap"> </div>
+            <ul class="hamburger__list">
+                <li class="header__list-item">
+                    <a href="{% url 'index'  %}" class="header__link">Главная</a>
+                </li>
+                <li class="header__list-item">
+                    <a href="{% url 'users:news' %}" class="header__link">Новости</a>
+                </li>
+                <li class="header__list-item">
+                    <a href="{% url 'cathedra:teachers' %}" class="header__link">Преподаватели</a>
+                </li>
+                <li class="header__list-item">
+                    <a href="{% url 'cathedra:plan' %}" class="header__link">Учебный план</a>
+                </li>
+                <li class="header__list-item">
+                    <img src="{% static 'main/img/cross_window.png' %}" alt="Закрыть меню" />
+                </li>
+            </ul>
         </div>
+        <ul class="header__list">
+            <li class="header__list-item">
+                <a href="{% url 'index'  %}" class="header__link">Главная</a>
+            </li>
+            <li class="header__list-item">
+                <a href="{% url 'users:news' %}" class="header__link">Новости</a>
+            </li>
+            <li class="header__list-item">
+                <a href="{% url 'cathedra:teachers' %}" class="header__link">Преподаватели</a>
+            </li>
+            <li class="header__list-item">
+                <a href="{% url 'cathedra:plan' %}" class="header__link">Учебный план</a>
+            </li>
+        </ul>
+        <a class="header__apply" href="{% url 'index'%}">Подать заявку</a>
     </header>
-    <button class="calendar-button">
-        <img class="calendar__cross" alt="Иконка закрытия" src="{% static 'news/img/cross.svg' %}">
-        <img class="calendar__icon" alt="Иконка календаря" src="{% static 'news/img/calendar.svg' %}">
-    </button>
-    <div id="calendar"></div>
-    <section class="section">
-        <div class="div_wrap">
-            <div class="section_grid">
+    <main class="main">
+        <div id="calendar"></div>
+        <section class="section">
+            <div class="div_wrap">
+                <aside class="tags">
+                    <div class="tags__item">
+                        <p class="tags__text">#МАИ</p>
+                        <button class="tags__button">
+                            <img src="{% static 'news/img/little_cross.png' %}" alt="Удалить" class="tags__cross-icon">
+                        </button>
+                    </div>
+                </aside>
+                <div class="section_grid">
+                    <button class="calendar-button">
+                        <img class="calendar__cross" alt="Иконка закрытия" src="{% static 'news/img/cross.svg' %}">
+                        <img class="calendar__icon" alt="Иконка календаря" src="{% static 'news/img/calendar.png' %}">
+                    </button>
+                </div>
+            </div>
+        </section>
+        <nav class="article_pagination">
+            <ul class="article_pagination-list">
+            </ul>
+        </nav>
+    </main>
+    <footer class="footer">
+        <div class="footer__contacts">
+            <h2 class="footer__header">Наши контакты:</h2>
+            <a href="tel:+74991419416" class="footer__phone">+7 (499) 141-94-16</a>
+            <a href="mailto:kaf316@mai.ru" class="footer__email">kaf316@mai.ru</a>
+            <adress class="footer__adress">121552 Москва, ул. Оршанская, д.3, корп.«B», 4
+                этаж.</adress>
+        </div>
+        <div class="footer__links">
+            <h2 class="footer__header">Интересные ссылки:</h2>
+            <div class="footer__docs">
+                <a href="" class="footer__link">
+                    <img src="{% static 'main/img/docs.svg' %}" alt="Документы" class="footer__icon" />
+                </a>
+                <a href="" class="footer__link">
+                    <img src="{% static 'main/img/youtube.svg' %}" alt="Ютуб" class="footer__icon" />
+                </a>
             </div>
         </div>
-    </section>
-    <nav class="article_pagination">
-        <ul class="article_pagination-list">
-        </ul>
-    </nav>
+        <div class="footer__other">
+            <a href="" class="footer__site">
+                <img src="{% static 'main/img/smiap.png' %}" alt="" class="footer__img" />
+            </a>
+            <a href="" class="footer__site">
+                <img src="{% static 'main/img/it-center.png' %}" alt="" class="footer__img" />
+            </a>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.4.0/build/vanilla-calendar.min.js" defer></script>
     <script type="module" src="{% static 'news/js/app.js' %}"></script>
 </body>

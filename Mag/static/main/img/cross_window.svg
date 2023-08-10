@@ -1,0 +1,22 @@
+<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 44">
+<g id="Line 35">
+<path d="M9.19235 27.5771L27.5771 9.19237" stroke="url(#paint0_linear_126_691)"/>
+<path d="M9.19235 27.5771L27.5771 9.19237" stroke="white"/>
+</g>
+<g id="Line 36">
+<line x1="27.5772" y1="27.5772" x2="9.1924" y2="9.19241" stroke="url(#paint1_linear_126_691)"/>
+<line x1="27.5772" y1="27.5772" x2="9.1924" y2="9.19241" stroke="white"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_126_691" x1="18.3847" y1="18.3848" x2="19.0918" y2="19.0919" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FD8211"/>
+<stop offset="1" stop-color="#FE300D"/>
+</linearGradient>
+<linearGradient id="paint1_linear_126_691" x1="18.7383" y1="18.0312" x2="19.4454" y2="17.3241" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FD8211"/>
+<stop offset="1" stop-color="#FE300D"/>
+</linearGradient>
+</defs>
+</svg>

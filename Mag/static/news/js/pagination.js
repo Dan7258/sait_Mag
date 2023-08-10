@@ -11,7 +11,7 @@ export const pagination = (async () => {
         OFFSET,
         pageObject,
         slidingPagination,
-        timingSlidingPagination,
+        timingSlidingPagination
     } = contants;
     const { filterPagesForText, calculatePaginationNumber, sortForDate } = utils;
     
@@ -19,7 +19,7 @@ export const pagination = (async () => {
     const paginationList = document.querySelector(".article_pagination-list");
     const sectionGrid = document.querySelector(".section_grid");
     const pageNumber = calculatePaginationNumber(data, NUMBER_OF_NEWS_ON_PAGE);
-    
+
     let {
         lastActiveSection: last,
         maxActiveSection: max,
@@ -32,7 +32,7 @@ export const pagination = (async () => {
         filteredData,
     } = pageObject;
     let scrollingFunction = newsLoadingWhileScrolling(plus);
-    
+
     const windowScrollTo = (activeNumber = +active) => {
         window.scrollTo({
             top: (activeNumber - 1) * OFFSET,
@@ -59,10 +59,10 @@ export const pagination = (async () => {
             history.pushState(
                 null,
                 null,
-                `?page=${active}/?id=${ACTIVE_ID_NUMBER}`
+                `/page/${active}/id/${ACTIVE_ID_NUMBER}`
             );
         } else {
-            history.pushState(null, null, `?page=${active}`);
+            history.pushState(null, null, `/page/${active}`);
         }
         addActivePaginationClass(
             removeActivePaginationClass()[createVirtualActive() - 1]
@@ -135,7 +135,7 @@ export const pagination = (async () => {
     
     const createPagination = (startNumber = 1, cycleLimit = pageNumber, numberOfAllNews = pageNumber) => {
         if (filteredData.length > 0) {
-            max = 0; // баг с этой херью связан
+            max = 0; // баг с этим связан
         }
         let diff = cycleLimit - numberOfAllNews;
         if (diff > 0) {
@@ -186,7 +186,7 @@ export const pagination = (async () => {
     const createPageBtnLink = (pageNumber = "") => {
         let pageBtnLink = document.createElement("a");
         pageBtnLink.textContent = pageNumber;
-        pageBtnLink.href = `?page=${pageNumber}`;
+        pageBtnLink.href = `/page/${pageNumber}`;
         return pageBtnLink;
     };
 

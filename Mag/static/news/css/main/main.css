@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    background: var(--background-color);
+    padding: 0 307px;
+}
+
+@media (max-width: 1439px) {
+    .main {
+        justify-content: unset;
+        padding: 0 37px;
+    }
+}

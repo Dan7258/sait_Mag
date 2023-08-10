@@ -31,27 +31,27 @@ export const contants = (() => {
     ];
     const slidingPagination = [
         {
-            transform: "translate(0,80%)"
+            transform: "translate(-50%, 0%)"
         },
         {
-            transform: "translate(0,-180%)"
+            transform: "translate(-50%, -155%)"
         }
     ]
     const timingSlidingPagination = {
         duration: 600,
         fill: "forwards"
     }
-    const slidingButton = [
-        {
-            transform: "translate(175%,0)"
-        },
-        {
-            transform: "translate(0,0)"
-        }
-    ]
-    const timingButton = {
-        duration: 600
-    }
+    // const slidingButton = [
+    //     {
+    //         transform: "translate(175%,0)"
+    //     },
+    //     {
+    //         transform: "translate(-100%,0)"
+    //     }
+    // ]
+    // const timingButton = {
+    //     duration: 600
+    // }
     const calendarIcon = [
         {
             transform: "translateX(0px)"
@@ -113,8 +113,8 @@ export const contants = (() => {
         newHide,
         slidingPagination,
         timingSlidingPagination,
-        timingButton,
-        slidingButton,
+        // timingButton,
+        // slidingButton,
         calendarIcon,
         calendarCross,
         calendarCrossBack,

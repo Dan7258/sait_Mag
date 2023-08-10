@@ -1,0 +1,27 @@
+.tags {
+    padding-bottom: 20px;
+}
+
+.tags__item {
+    display: flex;
+    align-items: center;
+}
+
+.tags__text {
+    background: linear-gradient(180deg, #A1FB21 0%, #36A703 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.tags__button {
+    margin-left: 5px;
+    background-color: var(--background-color);
+}
+
+.tags__cross-icon:hover {
+    border-radius: 2px;
+    background: linear-gradient(180deg, #FD8211 0%, #FE300D 100%);
+}

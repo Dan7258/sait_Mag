@@ -1,0 +1,140 @@
+.general {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    column-gap: 13vw;
+    position: relative;
+    background: 11% 80% / 27% no-repeat url("../../img/servers.svg");
+}
+
+.general__header {
+    color: #000;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.general__items {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    border: 1px solid black;
+    padding: 35px;
+    row-gap: 30px;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 480px;
+    backdrop-filter: blur(5px);
+}
+
+.general__icon:first-child {
+    justify-self: left;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.general__icon:nth-child(2) {
+    grid-area: 1 / 3 / 2 / 5;
+    justify-self: right;
+}
+
+.general__icon:nth-child(3) {
+    justify-self: left;
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.general__icon:nth-child(4) {
+    grid-area: 2 / 4 / 3 / 5;
+    justify-content: right;
+}
+
+.general__info .general__items {
+    width: 90%;
+    display: block;
+}
+
+.general__list-item {
+    color: #0b0f19;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.general__list-item:first-child {
+    margin: 0;
+}
+
+.general__list-descr {
+    color: black;
+    margin-left: 20px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@media (max-width: 1439px) {
+    .general {
+        display: block;
+        background: none;
+    }
+    .general__info {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .general__items {
+        grid-template: repeat(4, 1fr) / 1fr;
+        padding: 30px;
+        width: auto;
+        width: 80%;
+    }
+    .general__items > .general__icon {
+        grid-area: auto;
+        justify-self: center;
+    }
+    .general__header {
+        font-size: 30px;
+    }
+    .general__info .general__items {
+        width: 90%;
+    }
+}
+
+@media (max-width: 524px) {
+    .general__list-descr {
+        color: black;
+        font-size: 18px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 424px) {
+    .general__partners {
+        margin-top: 40px;
+    }
+    .general__header {
+        font-size: 22px;
+    }
+    .general__items {
+        padding: 14px;
+        margin-top: 40px;
+        width: 100%;
+    }
+    .general__list-item::before {
+        background: no-repeat url("../../img/arrow_small.svg");
+        width: 28px;
+        height: 28px;
+        top: 0;
+        left: -36px;
+    }
+    .general__info .general__items {
+        width: 100%;
+    }
+}

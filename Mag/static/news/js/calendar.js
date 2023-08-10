@@ -47,10 +47,8 @@ export const calendar = (async () => {
     NUMBER_OF_NEWS_ON_PAGE,
     pageObject,
     newTiming,
-    slidingButton,
     newShow,
     newHide,
-    timingSlidingPagination,
     calendarIcon,
     calendarCross,
     calendarCrossBack,
@@ -188,7 +186,7 @@ export const calendar = (async () => {
 
   function dragCalendarHeader(calendarElem) {
     const header = calendarElem.querySelector(".vanilla-calendar-header");
-    header?.addEventListener("mousedown", (event) => {
+    const onDragging = (event) => {
       let shiftX = event.clientX - calendarElem.getBoundingClientRect().left;
       let shiftY = event.clientY - calendarElem.getBoundingClientRect().top;
 
@@ -202,16 +200,22 @@ export const calendar = (async () => {
       const preventDefault = (e) => {
         e.preventDefault();
       };
+      const cleanListeners = () => {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("selectstart", preventDefault);
+        document.removeEventListener("touchmove", onMouseMove);
+        header.onmouseup = null;
+      }
 
       document.addEventListener("selectstart", preventDefault);
       document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("touchmove", onMouseMove);
 
-      header.addEventListener("mouseup", () => {
-        document.removeEventListener("mousemove", onMouseMove);
-        document.removeEventListener("selectstart", preventDefault);
-        header.onmouseup = null;
-      });
-    });
+      header.addEventListener("mouseup", cleanListeners);
+    }
+
+    header?.addEventListener("touchstart", onDragging);
+    header?.addEventListener("mousedown", onDragging);
   }
 
   function turnOnDragging() {
@@ -238,14 +242,25 @@ export const calendar = (async () => {
     showCalendar();
   };
 
-  const animateCalendarBtn = () => {
-    if (window.scrollY > 0 && !scroll) {
-      calendarButton.animate(slidingButton, timingSlidingPagination);
-      window.removeEventListener("scroll", animateCalendarBtn);
-    }
-  };
+  // const animateCalendarBtn = () => {
+  //   if (window.scrollY > 0 && !scroll) {
+  //     calendarButton.animate(slidingButton, timingSlidingPagination);
+  //     window.removeEventListener("scroll", animateCalendarBtn);
+  //   }
+  // };
 
-  window.addEventListener("scroll", animateCalendarBtn);
+  // window.addEventListener("scroll", animateCalendarBtn);
+
+  const handleHoverBtn = () => {
+    calendarButton.addEventListener("mouseover", () => {
+      calendarIconElem.src = `http://127.0.0.1:8000/static/news/img/calendar_active.png`;
+    });
+    calendarButton.addEventListener("mouseout", () => {
+      calendarIconElem.src = `http://127.0.0.1:8000/static/news/img/calendar.png`;
+    });
+  }
+  
+  handleHoverBtn();
   calendarButton.addEventListener("click", calendarInit, { once: true });
 
   return 1;

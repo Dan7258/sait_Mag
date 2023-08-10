@@ -1,16 +1,18 @@
 :root {
-    --background-color: #181066;
-    --button-color: #3F32FD;
-    --extra-color: #FD9131;
-}
-
-body {
-    background-color: var(--background-color);
+    --background-color: #0b0f19;
+    --extra-color: linear-gradient(
+        228deg,
+        #b600a4 1.29%,
+        #b600a4 27.13%,
+        #4613f0 65.36%,
+        #0a1bfe 99.99%,
+        #071bff 100%
+    );
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
-    color:rgb(255, 255, 255) ;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(255, 255, 255);
 }
 
 a {
@@ -26,10 +28,18 @@ a:hover {
     color: var(--button-color);
 }
 
-.div_wrap {
-    padding: 0 300px;
-}
-
 span {
     color: var(--extra-color);
+}
+
+html,
+body {
+    height: 100%;
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
 }

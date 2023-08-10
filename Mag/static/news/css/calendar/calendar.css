@@ -3,9 +3,8 @@
     gap: 5px;
     position: fixed;
     z-index: 2;
-    left: 1455px;
-    top: 664px;
-    border-radius: 15px;
+    right: 150px;
+    top: 670px;
     opacity: 0;
     display: none;
 }
@@ -20,11 +19,11 @@
 }
 
 .vanilla-calendar-years__year {
-    color: var(--button-color);
+    color: #7C0798;
 }
 
 .vanilla-calendar-years__year_selected {
-    background-color: var(--button-color);
+    background-color: #7C0798;
     color: white;
 }
 
@@ -33,17 +32,17 @@
 }
 
 .vanilla-calendar-months__month {
-    color: var(--button-color);
-    background-color: white;
+    color: #7C0798;
 }
 
 .vanilla-calendar-months__month_selected {
-    background-color: var(--button-color);
+    background-color: #7C0798;
     color: white;
 }
 
 .vanilla-calendar-months__month_selected:hover, .vanilla-calendar-years__year_selected:hover {
-    background-color: var(--button-color);
+    background-color: #7C0798;
+    color: white;
 }
 
 .vanilla-calendar-arrow::before {
@@ -61,7 +60,7 @@
 }
 
 .vanilla-calendar-arrow:hover::before, .vanilla-calendar-arrow:hover::after {
-    background-color: var(--extra-color);
+    background-color: #fd8211;
 }
 
 .vanilla-calendar_month {
@@ -75,20 +74,22 @@
 .vanilla-calendar-header {
     padding: 5px 12px 5px 12px;
     height: 45px;
-    border-radius: inherit;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    background-color: var(--button-color);
+    background: linear-gradient(0deg, #1B1059 0%, #7C0798 100%);
     color: white;
     cursor: grab;
 }
 
 .vanilla-calendar-year {
-    color: var(--extra-color);
+    color: #fd8211;
 }
 
 .vanilla-calendar-year:hover {
-    color: rgb(212, 123, 45);
+    background: linear-gradient(180deg, #fd8211 0%, #fe300d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .vanilla-calendar-month {
@@ -104,23 +105,39 @@
 }
 
 .calendar-button {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     cursor: pointer;
-    width: 100px;
-    height: 100px;
-    bottom: 20px;
-    transform: translate(175%,0);
-    right: 46px;
-    background: #3F32FD;
-    border: 3px solid #FFFFFF;
-    border-radius: 74px;
-    overflow: hidden;
+    top: 0px;
+    right: -110px;
+    overflow: hidden;    
+    border-radius: 5px;
+    border: 1px solid #FFF;
+    width: 80px;
+    height: 80px;
+    transition: 150ms all linear;
+    background: var(--background-color);
+}
+
+.calendar-button:hover {
+    background: linear-gradient(180deg, #FD8211 0%, #FE300D 100%);
 }
 
 .calendar__cross {
     position: absolute;
     transform: translateX(-100px);
-    width: 76px;
-    top: 9px;
+    width: 70px;
+    top: 5px;
+    right: 4px;
+}
+
+.calendar__icon {
+    width: 70px;
+}
+
+@media (max-width: 1439px) {
+    .vanilla-calendar {
+        right: 20px;
+        top: 530px;
+    }
 }

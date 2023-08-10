@@ -1,0 +1,228 @@
+.start-section {
+    background: 0% 0% / 63% no-repeat url("../../img/brain.svg"),
+        var(--background-color);
+    height: 1100px;
+    padding: 0 80px;
+}
+
+.start-section__header {
+    font-size: 66px;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(
+        228deg,
+        #b600a4 1.29%,
+        #b600a4 27.13%,
+        #4613f0 65.36%,
+        #0a1bfe 99.99%,
+        #071bff 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 970px;
+    text-align: left;
+    position: absolute;
+    right: 0px;
+    top: 220px;
+    text-transform: uppercase;
+}
+
+.start-section__details {
+    position: absolute;
+    top: 653px;
+    right: 105px;
+    z-index: 1;
+}
+
+.start-section__title {
+    background: linear-gradient(to right, #FD1AC5 30%, #FEC424 78%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+    -webkit-text-fill-color: transparent;
+}
+
+.start-section__list {
+    padding: 0 40px 22px 40px;
+    border: 1px solid white;
+    width: 900px;
+    height: 380px;
+    margin-top: 50px;
+}
+
+.start-section__list-item {
+    font-size: 20px;
+    align-items: center;
+    margin-top: 22px;
+    display: flex;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.start-section__icon {
+    margin-right: 20px;
+}
+.start-section__img {
+    width: 50px;
+    height: 50px;
+}
+
+.start-section__apply {
+    background: linear-gradient(180deg, #fd8211 0%, #fe300d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    text-transform: uppercase;
+    position: absolute;
+    top: 995px;
+    left: 160px;
+}
+
+
+.start-section__apply:hover .start-section__apply-text::after {
+    background: white;
+}
+
+.start-section__apply:hover .start-section__apply-text{
+    background: none;
+    background-clip: none;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: white;
+}
+
+.start-section__apply-img {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width: 1750px) {
+    .start-section__header {
+        font-size: 60px;
+        width: 830px;
+        right: 120px;
+    }
+    .start-section__list {
+        width: 800px;
+    }
+}
+
+@media (max-width: 1439px) {
+    .start-section__header {
+        width: 650px;
+        font-size: 45px;
+        right: 120px;
+    }
+    .start-section {
+        background: -2% 2% / 54% no-repeat url("../../img/brain.svg"),
+        var(--background-color);
+        padding-top: 390px;
+    }
+    .start-section__details {
+        position: static;
+    }
+    .start-section__list {
+        margin: 0 auto;
+        margin-top: 57px;
+        width: 850px;
+        height: auto;
+    }
+    .start-section__apply {
+        position: static;
+        width: 320px;
+        margin: 0 auto;
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .start-section__header {
+        right: 30px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .start-section__list {
+        width: 80%;
+    }
+    .start-section {
+        padding: 0 30px;
+        padding-top: 390px;
+    }
+    .start-section__header {
+        width: 510px;
+        font-size: 35px;
+        right: 70px;
+        top: 150px;
+    }
+}
+
+@media (max-width: 900px) {
+    .start-section__header {
+        right: 30px;
+        width: 477px;
+    }
+}
+
+@media (max-width: 767px) {
+    .start-section {
+        background: var(--background-color);
+        padding: 40px 30px;
+        height: auto;
+    }
+    .start-section__details {
+        margin-top: 50px;
+    }
+    .start-section__list {
+        width: 100%;
+    }
+    .start-section__header {
+        width: 100%;
+        margin: 0 auto;
+        position: static;
+    }
+}
+
+@media (max-width: 524px) {
+    .start-section {
+        padding: 40px 20px;
+    }
+    .start-section__header {
+        font-size: 20px;
+    }
+    .start-section__details {
+        margin-top: 30px;
+    }
+    .start-section__title {
+        font-size: 20px;
+    }
+    .start-section__list {
+        margin-top: 30px;
+        padding: 0 20px 22px 20px;
+    }
+    .start-section__list-item {
+        font-size: 16px;
+    }
+    .start-section__img {
+        height: 35px;
+        width: 35px;
+    }
+    .start-section__apply {
+        width: 210px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    .start-section__apply-img {
+        height: 35px;
+        width: 35px;
+    }
+}

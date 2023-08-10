@@ -2,5 +2,10 @@
 @import url("nullstyle.css");
 @import url("style.css");
 @import url("header/header.css");
-@import url("section/section.css");
+@import url("start/start.css");
+@import url("learn/learn.css");
+@import url("general/general.css");
+@import url("info/info.css");
+@import url("apply/apply.css");
+@import url("footer/footer.css");
 @import url("media.css");
